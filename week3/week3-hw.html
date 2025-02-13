@@ -5,83 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Banana Pancakes Recipe</title>
     <style>
+        /* Enhanced CSS Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #f8f8f8;
+            line-height: 1.6;
         }
+
+        /* Header */
         header {
-            background-color: #d9b3ff;
-            padding: 15px;
-            font-size: 24px;
-            border-radius: 8px;
+            text-align: center;
+            background-color: #FFD700;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            color: #4B0082;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navigation */
+        nav {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #FFF3B0;
+            border-radius: 5px;
+        }
+
         nav a {
             text-decoration: none;
-            margin: 0 10px;
-            color: #333;
+            margin: 0 15px;
+            color: #4B0082;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
-        .container {
+
+        nav a:hover {
+            color: #FF6B6B;
+        }
+
+        /* Main Content */
+        main {
             background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Recipe Sections */
+        .columns {
+            margin-top: 20px;
+        }
+
+        .ingredients-section, .instructions-section {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            background: #FFF8E1;
             padding: 20px;
             border-radius: 8px;
-            max-width: 600px;
-            margin: auto;
+            margin-right: 1%;
+            box-sizing: border-box;
         }
-        h2, h3 {
-            color: #663399;
+
+        h2 {
+            color: #4B0082;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+            margin-top: 0;
         }
+
+        h3 {
+            color: #6B4226;
+            margin-top: 0;
+        }
+
+        /* List Styling */
         ul, ol {
-            text-align: left;
-            display: inline-block;
+            padding-left: 25px;
         }
+
+        ul li {
+            list-style-type: '🍌';
+            padding-left: 10px;
+            margin-bottom: 8px;
+        }
+
+        ol li {
+            list-style-type: none;
+            counter-increment: step-counter;
+            margin-bottom: 10px;
+        }
+
+        ol li::before {
+            content: counter(step-counter);
+            color: white;
+            background: #FF6B6B;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px;
+            line-height: 25px;
+        }
+
+        /* Footer */
         footer {
-            background-color: #d9b3ff;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #FFD700;
+            border-radius: 10px;
+            color: #4B0082;
+        }
+
+        footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <h1>Banana Pancakes Recipe</h1>
         <nav>
             <a href="#">Home</a> |
             <a href="#">Recipes</a> |
+            <a href="#">Categories</a> |
             <a href="#">Contact</a>
         </nav>
     </header>
-    <div class="container">
-        <h2>Easy Banana Pancakes</h2>
-        <p>Make delicious and fluffy banana pancakes with simple ingredients.</p>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>1 ripe banana</li>
-            <li>1 cup flour</li>
-            <li>1 teaspoon baking powder</li>
-            <li>1 tablespoon sugar</li>
-            <li>1 egg</li>
-            <li>1/2 cup milk</li>
-            <li>1/2 teaspoon vanilla extract</li>
-            <li>1 tablespoon melted butter</li>
-        </ul>
-        <h3>Instructions</h3>
-        <ol>
-            <li>Mash the banana in a bowl.</li>
-            <li>Add egg, milk, vanilla, and melted butter. Mix well.</li>
-            <li>In another bowl, mix flour, baking powder, and sugar.</li>
-            <li>Combine wet and dry ingredients until smooth.</li>
-            <li>Heat a pan and pour batter to make pancakes.</li>
-            <li>Cook until golden brown, then flip.</li>
-            <li>Serve and enjoy!</li>
-        </ol>
-    </div>
+
+    <!-- Recipe Content -->
+    <main>
+        <h2>Fluffy Banana Pancakes</h2>
+        <p class="description">Start your day right with these golden, fluffy banana pancakes - a perfect balance of sweetness and warmth!</p>
+
+        <div class="columns">
+            <div class="ingredients-section">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1 ripe banana</li>
+                    <li>1 cup flour</li>
+                    <li>1 teaspoon baking powder</li>
+                    <li>1 tablespoon sugar</li>
+                    <li>1 egg</li>
+                    <li>1/2 cup milk</li>
+                    <li>1/2 teaspoon vanilla extract</li>
+                    <li>1 tablespoon melted butter</li>
+                </ul>
+            </div>
+
+            <div class="instructions-section">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Mash the banana in a bowl.</li>
+                    <li>Add egg, milk, vanilla, and melted butter. Mix well.</li>
+                    <li>In another bowl, combine flour, baking powder, sugar, and salt.</li>
+                    <li>Mix dry and wet ingredients until combined.</li>
+                    <li>Heat a pan and cook pancakes until golden brown.</li>
+                    <li>Serve with your favorite toppings.</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Easy Recipes</p>
+        <p>© 2023 Banana Pancakes Paradise</p>
+        <p>Follow us: 🥞 📷 🍳</p>
     </footer>
+
 </body>
 </html>
-
