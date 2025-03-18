@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Hotel Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f4e3d7; /* Warm terracotta tone */
+            color: #2c3e50; /* Deep blue for readability */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d76b5a; /* Terracotta */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .nav {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hotel-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .hotel-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .hotel-card h3 {
+            color: #d76b5a;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        .button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            .header {
+                font-size: 22px;
+                padding: 10px;
+            }
+            .button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Worldwide Hotel Recommendations</div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="hotel-listings.html">Hotel Listings</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="container">
+        <h2>Hotel Listings</h2>
+        
+        <div class="hotel-card">
+            <img src="./images/IMG_2439.JPG" alt="Tambo del Inka Hotel"> <!-- Add your image here -->
+            <h3><a href="tambo-del-inka.html">Tambo del Inka, a Luxury Collection Resort & Spa, Valle Sagrado</a></h3>
+        </div>
+
+        <div class="hotel-card">
+            <img src="./images/grenada1.png" alt="Silversands Beach House"> <!-- Add your image here -->
+            <h3><a href="silversands.html">Silversands Beach House, Grenada</a></h3>
+        </div>
+
+        <div class="hotel-card">
+            <img src="./images/1011.png" alt="101 Hotel Reykjavik"> <!-- Add your image here -->
+            <h3><a href="101-hotel.html">101 Hotel Reykjavík</a></h3>
+        </div>
+
+        <div class="hotel-card">
+            <img src="./images/hotelf61.png" alt="Hotel F6 Helsinki"> <!-- Add your image here -->
+            <h3><a href="hotel-f6.html">Hotel F6, Helsinki</a></h3>
+        </div>
+        <div class="hotel-card">
+            <img src="./images/IMG_3004.HEIC" alt="Aman Gani Hotel"> <!-- Add your image here -->
+            <h3><a href="aman-gani.html">Aman Gani</a></h3>
+        </div>
+
+    </div>
+</body>
+</html>
