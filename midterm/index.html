@@ -7,83 +7,117 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Playfair Display', serif;
-            background-color: #f4e3d7; /* Warm terracotta tone */
-            color: #2c3e50; /* Deep blue for readability */
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f4f0; /* Neutral nude tone */
+            color: #3C3C3C; /* Dark gray for readability */
             margin: 0;
             padding: 0;
         }
         .header {
-            background-color: #d76b5a; /* Terracotta */
-            color: white;
-            padding: 15px;
+            background-color: #EDEAE0; /* Dark gray */
+            color: #3C3C3C;
+            padding: 20px;
             text-align: center;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
         }
         .nav {
             text-align: center;
-            padding: 10px;
-            background-color: #2c3e50;
+            padding: 15px;
+            background-color: #D6CEC3; /* Slightly lighter gray */
             font-family: 'Poppins', sans-serif;
         }
         .nav a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
             font-size: 18px;
             font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #4A4A4A; /* Terracotta */
         }
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #EDEAE0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #4A4A4A; /* Terracotta */
+            margin-top: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hotel-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
         .hotel-card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            text-align: center;
+            position: relative;
+            width: 48%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hotel-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
         .hotel-card img {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            height: 300px; /* Ensures all images are the same size */
+            object-fit: cover; /* Ensures images cover the space evenly */
+            display: block;
         }
-        .hotel-card h3 {
-            color: #d76b5a;
-            font-family: 'Playfair Display', serif;
+        .hotel-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #4A4A4A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .hotel-card:hover .overlay {
+            opacity: 1;
+        }
+        .overlay h3 {
+            font-size: 20px;
             font-weight: 700;
-        }
-        .button {
-            background-color: #2c3e50;
-            color: white;
+            text-align: center;
             padding: 10px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Playfair Display', serif;
         }
-        
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
-                padding: 15px;
+                padding: 20px;
             }
             .header {
-                font-size: 22px;
-                padding: 10px;
+                font-size: 24px;
+                padding: 15px;
             }
-            .button {
-                padding: 8px;
-                font-size: 14px;
+            .hotel-card {
+                width: 100%;
             }
         }
     </style>
@@ -92,37 +126,50 @@
     <div class="header">Worldwide Hotel Recommendations</div>
     <div class="nav">
         <a href="index.html">Home</a>
-        <a href="hotel-listings.html">Hotel Listings</a>
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
     </div>
     
     <div class="container">
-        <h2>Hotel Listings</h2>
+        <h2>Explore Luxury Hotels Around the World</h2>
         
-        <div class="hotel-card">
-            <img src="./images/IMG_2439.JPG" alt="Tambo del Inka Hotel"> <!-- Add your image here -->
-            <h3><a href="tambo-del-inka.html">Tambo del Inka, a Luxury Collection Resort & Spa, Valle Sagrado</a></h3>
+        <h2>🏝️ Resorts</h2>
+        <div class="hotel-category">
+            <a href="tambo-del-inka.html" class="hotel-card">
+                <img src="./images/IMG_2439.JPG" alt="Tambo del Inka Hotel">
+                <div class="overlay">
+                    <h3>Tambo del Inka, a Luxury Collection Resort & Spa, Valle Sagrado</h3>
+                </div>
+            </a>
+            <a href="silversands.html" class="hotel-card">
+                <img src="./images/grenada1.png" alt="Silversands Beach House">
+                <div class="overlay">
+                    <h3>Silversands Beach House, Grenada</h3>
+                </div>
+            </a>
+            <a href="aman-gani.html" class="hotel-card">
+                <img src="./images/amangani1.png" alt="Aman Gani Hotel">
+                <div class="overlay">
+                    <h3>Aman Gani</h3>
+                </div>
+            </a>
         </div>
-
-        <div class="hotel-card">
-            <img src="./images/grenada1.png" alt="Silversands Beach House"> <!-- Add your image here -->
-            <h3><a href="silversands.html">Silversands Beach House, Grenada</a></h3>
+        
+        <h2>🏨 Hotels</h2>
+        <div class="hotel-category">
+            <a href="101-hotel.html" class="hotel-card">
+                <img src="./images/1011.png" alt="101 Hotel Reykjavik">
+                <div class="overlay">
+                    <h3>101 Hotel Reykjavík</h3>
+                </div>
+            </a>
+            <a href="hotel-f6.html" class="hotel-card">
+                <img src="./images/hotelf61.png" alt="Hotel F6 Helsinki">
+                <div class="overlay">
+                    <h3>Hotel F6, Helsinki</h3>
+                </div>
+            </a>
         </div>
-
-        <div class="hotel-card">
-            <img src="./images/1011.png" alt="101 Hotel Reykjavik"> <!-- Add your image here -->
-            <h3><a href="101-hotel.html">101 Hotel Reykjavík</a></h3>
-        </div>
-
-        <div class="hotel-card">
-            <img src="./images/hotelf61.png" alt="Hotel F6 Helsinki"> <!-- Add your image here -->
-            <h3><a href="hotel-f6.html">Hotel F6, Helsinki</a></h3>
-        </div>
-        <div class="hotel-card">
-            <img src="./images/amangani1.png" alt="Aman Gani Hotel"> <!-- Add your image here -->
-            <h3><a href="aman-gani.html">Aman Gani</a></h3>
-        </div>
-
     </div>
 </body>
 </html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Worldwide Hotels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f4f0;
+            color: #3C3C3C;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #EDEAE0;
+            color: #3C3C3C;
+            padding: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+        .nav {
+            text-align: center;
+            padding: 15px;
+            background-color: #D6CEC3;
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav a {
+            color: #3C3C3C;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #d76b5a;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('./images/hero1.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+        }
+        .gallery-container {
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 40px 20px;
+            position: relative;
+        }
+        .gallery-grid {
+            display: flex;
+            gap: 20px;
+            animation: scrollGallery 20s linear infinite;
+        }
+        @keyframes scrollGallery {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .gallery-item {
+            position: relative;
+            width: 350px;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .gallery-item:hover {
+            transform: scale(1.08);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Gallery</div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="hero">Explore Our Luxury Hotels</div>
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <a href="101-hotel.html" class="gallery-item">
+                <img src="./images/1015.png" alt="101 Hotel Reykjavik">
+                <div class="gallery-caption">101 Hotel Reykjavík, Iceland</div>
+            </a>
+            <a href="tambo-del-inka.html" class="gallery-item">
+                <img src="./images/tambo5.png" alt="Tambo del Inka">
+                <div class="gallery-caption">Tambo del Inka, Peru</div>
+            </a>
+            <a href="hotel-f6.html" class="gallery-item">
+                <img src="./images/f65.png" alt="Hotel F6 Helsinki">
+                <div class="gallery-caption">Hotel F6, Helsinki</div>
+            </a>
+            <a href="silversands.html" class="gallery-item">
+                <img src="./images/ss3.png" alt="Silversands Beach House">
+                <div class="gallery-caption">Silversands Beach House, Grenada</div>
+            </a>
+            <a href="aman-gani.html" class="gallery-item">
+                <img src="./images/gani5.png" alt="Aman Gani">
+                <div class="gallery-caption">Aman Gani</div>
+            </a>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <a href="101-hotel.html" class="gallery-item">
+                <img src="./images/1013.png" alt="101 Hotel Reykjavik">
+                <div class="gallery-caption">101 Hotel Reykjavík, Iceland</div>
+            </a>
+            <a href="tambo-del-inka.html" class="gallery-item">
+                <img src="./images/tambo6.png" alt="Tambo del Inka">
+                <div class="gallery-caption">Tambo del Inka, Peru</div>
+            </a>
+            <a href="hotel-f6.html" class="gallery-item">
+                <img src="./images/f66.png" alt="Hotel F6 Helsinki">
+                <div class="gallery-caption">Hotel F6, Helsinki</div>
+            </a>
+            <a href="silversands.html" class="gallery-item">
+                <img src="./images/ss4.png" alt="Silversands Beach House">
+                <div class="gallery-caption">Silversands Beach House, Grenada</div>
+            </a>
+            <a href="aman-gani.html" class="gallery-item">
+                <img src="./images/gani6.png" alt="Aman Gani">
+                <div class="gallery-caption">Aman Gani</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
