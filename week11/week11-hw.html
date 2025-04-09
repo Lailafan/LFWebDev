@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Space Defender</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            font-family: Arial;
+        }
+        #game {
+            background: #111;
+            width: 400px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+        }
+        #player {
+            width: 40px;
+            height: 40px;
+            background: blue;
+            position: absolute;
+            bottom: 20px;
+            left: 180px;
+        }
+        .bullet {
+            width: 5px;
+            height: 15px;
+            background: yellow;
+            position: absolute;
+        }
+        .asteroid {
+            width: 30px;
+            height: 30px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Space Defender</h1>
+    <div id="score">Score: 0</div>
+    <div id="game">
+        <div id="player"></div>
+    </div>
+    <p>Use ← → to move and SPACE to shoot!</p>
+
+    <script>
+        // Game elements
+        const game = document.getElementById("game");
+        const player = document.getElementById("player");
+        const scoreDisplay = document.getElementById("score");
+
+        // Game variables
+        let score = 0;
+        let playerX = 180;
+        const playerSpeed = 10;
+        const bullets = [];
+        const asteroids = [];
+
+        // Move player
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft" && playerX > 0) {
+                playerX -= playerSpeed;
+            }
+            if (e.key === "ArrowRight" && playerX < 360) {
+                playerX += playerSpeed;
+            }
+            if (e.key === " ") {
+                shoot();
+            }
+            player.style.left = playerX + "px";
+        });
+
+        // Shoot bullet
+        function shoot() {
+            const bullet = document.createElement("div");
+            bullet.className = "bullet";
+            bullet.style.left = (playerX + 18) + "px";
+            bullet.style.bottom = "60px";
+            game.appendChild(bullet);
+            bullets.push(bullet);
+        }
+
+        // Create asteroid
+        function createAsteroid() {
+            const asteroid = document.createElement("div");
+            asteroid.className = "asteroid";
+            asteroid.style.left = Math.random() * 370 + "px";
+            asteroid.style.top = "0px";
+            game.appendChild(asteroid);
+            asteroids.push(asteroid);
+        }
+
+        // Game loop
+        function gameLoop() {
+            // Move bullets
+            bullets.forEach(bullet => {
+                const currentBottom = parseInt(bullet.style.bottom);
+                bullet.style.bottom = (currentBottom + 10) + "px";
+                
+                // Remove if off screen
+                if (currentBottom > 500) {
+                    bullet.remove();
+                    bullets.splice(bullets.indexOf(bullet), 1);
+                }
+            });
+
+            // Move asteroids
+            asteroids.forEach(asteroid => {
+                const currentTop = parseInt(asteroid.style.top);
+                asteroid.style.top = (currentTop + 3) + "px";
+                
+                // Remove if off screen
+                if (currentTop > 500) {
+                    asteroid.remove();
+                    asteroids.splice(asteroids.indexOf(asteroid), 1);
+                }
+                
+                // Check collision with player
+                if (currentTop > 460 && 
+                    parseInt(asteroid.style.left) > playerX - 30 && 
+                    parseInt(asteroid.style.left) < playerX + 40) {
+                    alert("Game Over! Score: " + score);
+                    location.reload();
+                }
+                
+                // Check collision with bullets
+                bullets.forEach(bullet => {
+                    if (parseInt(bullet.style.bottom) > currentTop &&
+                        parseInt(bullet.style.left) > parseInt(asteroid.style.left) - 5 &&
+                        parseInt(bullet.style.left) < parseInt(asteroid.style.left) + 30) {
+                        asteroid.remove();
+                        bullet.remove();
+                        asteroids.splice(asteroids.indexOf(asteroid), 1);
+                        bullets.splice(bullets.indexOf(bullet), 1);
+                        score += 10;
+                        scoreDisplay.textContent = "Score: " + score;
+                    }
+                });
+            });
+
+            // Spawn new asteroids
+            if (Math.random() < 0.02) {
+                createAsteroid();
+            }
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start game
+        gameLoop();
+    </script>
+</body>
+</html>
