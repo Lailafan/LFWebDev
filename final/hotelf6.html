@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel F6 | Helsinki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Perpetua', serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    .section-title {
+      font-family: 'Perpetua', serif;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 20px;
+    }
+    .content-block {
+      flex: 1 1 45%;
+      background-color: #f8f8f8;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .guest-reviews {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #eaeaea;
+      border-radius: 10px;
+    }
+    .review {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .button-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 10px;
+      font-size: 1rem;
+      border-radius: 30px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-compass me-2"></i>Adventure Compass</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="itinerary.html">Itinerary</a></li>
+          <li class="nav-item"><a class="nav-link active" href="discover.html">Discover</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Banner Carousel -->
+  <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./image/hotelf61.png" class="d-block w-100" style="max-height: 400px; object-fit: cover;" alt="Banner 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Hotel F6</h1>
+          <p>Scandinavian comfort in the heart of Helsinki.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./image/f62.png" class="d-block w-100" style="max-height: 400px; object-fit: cover;" alt="Banner 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Modern Elegance</h1>
+          <p>Cozy rooms, serene courtyard, local flavors.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Hotel Info -->
+  <div class="container">
+    <div class="two-column">
+      <div class="content-block">
+        <div class="image-container">
+          <img src="./image/f61.png" alt="Hotel F6 Highlights">
+        </div>
+        <div class="hotel-detail">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Family-owned boutique experience</li>
+            <li>Lush courtyard</li>
+            <li>Local delicacies for breakfast</li>
+          </ul>
+          <p><strong>Rates: From $195/night</strong></p>
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="image-container">
+          <img src="./image/f65.png" alt="Hotel F6 Experience">
+        </div>
+        <div class="hotel-detail">
+          <h3>Elegant Stay Experience</h3>
+          <p>Enjoy the refined hospitality of Hotel F6, offering cozy rooms, a lush courtyard, and a locally inspired breakfast that brings a taste of Finland’s finest cuisine.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guest-reviews">
+      <h2>Guest Reviews</h2>
+      <p class="review">"Guests often highlight the hotel's cozy atmosphere, attentive staff, and convenient location close to Helsinki's main attractions. The quality of the breakfast and the comfort of the rooms are also frequently praised."</p>
+    </div>
+
+    <div class="button-container">
+      <a href="urban.html" class="button">Back</a>
+      <a href="https://www.guestreservations.com/hotel-f6-helsinki/booking" class="button" target="_blank">Book Now</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
